@@ -3,4 +3,9 @@ This is a collection of proposed navit project networking services
 
 2. What all the stuff means ?
  - ntsprund - is a daemon runner i.e. the binary running right configuration
-
+ * Modules 'modules/' directory:
+   - sxmp - module to make job with sxmp easy
+   - auth - module implement basic authentification
+   - dmux - module for working with data
+   - pgsql - postgre sql be
+   - mapcatalog - module implements map catalog

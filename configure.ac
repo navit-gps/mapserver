@@ -71,4 +71,6 @@ PKG_CHECK_MODULES(LIBYDAEMON, [libydaemon])
 AC_OUTPUT([
 Makefile
 ntsprund/Makefile
+modules/Makefile
+modules/modsxmp/Makefile
 ])
