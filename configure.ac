@@ -73,4 +73,6 @@ Makefile
 ntsprund/Makefile
 modules/Makefile
 modules/modsxmp/Makefile
+modules/moddatamux/Makefile
+modules/modpsqlbe/Makefile
 ])

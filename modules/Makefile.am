@@ -1,1 +1,1 @@
-SUBDIRS = modsxmp
+SUBDIRS = modsxmp moddatamux modpsqlbe
