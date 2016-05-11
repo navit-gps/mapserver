@@ -109,6 +109,8 @@
 (dm-define-object 'mapregion (:acc 'access-rights)(:mdid 'u32)(:name 'cstr 512)
                   (:mrid 'u64)(:rootmrid 'u64)(:navitmap 'cstr 128)(:generation 'u32)
                   (:mpsize 'u64)(:source 'u64))
+(dm-set-object-store-backend 'mapregion (:be (object 'psqlbe psqlbe-ops))(:key "mapserverdb"))
+(dm-set-object-cache 'mapregion 128kb)
 
 
 (module-run 'network)
