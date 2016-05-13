@@ -74,25 +74,24 @@
 (dm-set-object-cache 'x509 128kb)
 
 ;; user object
-(dm-define-object 'user (:acc 'access-rights)(:uid 'u32)(:gid 'u32)(:sal 'u8)(:attr 'u8)
-                  (:domainid 'u8)(:reserved 'u8)(:rid 'u32)
+(dm-define-object 'user (:acc 'access-rights)(:uid 'u32)(:gid 'u32)(:attr 'u8)
+                  (:reserved 'u8)(:rid 'u32)
                   (:login 'cstr 32)(:password 'cstr 46)(:salt 'cstr 32)
                   (:expdate 'u64)(:pemid 'u64)(:spec 'u64)(:gids 'u32 8))
 (dm-set-object-store-backend 'user (:be (object 'psqlbe psqlbe-ops))(:key "mapserverdb"))
-(dm-set-object-cache 'user 2048kb)
+(dm-set-object-cache 'user 512kb)
 
 ;; group object
-(dm-define-object 'group (:acc 'access-rights)(:gid 'u32)(:rid 'u32)(:sal 'u8)(:attr 'u8)
-                  (:domainid 'u8)(:reserved 'u8)(:name 'cstr 32)(:spec 'u64))
+(dm-define-object 'group (:acc 'access-rights)(:gid 'u32)(:rid 'u32)(:name 'cstr 32)(:spec 'u64))
 (dm-set-object-store-backend 'group (:be (object 'psqlbe psqlbe-ops))(:key "mapserverdb"))
 (dm-set-object-cache 'group 512kb)
 
 ;; role, here we are able to store data about available RPC channels to avoid recompiling
 ;; code
-(dm-define-object 'role (:acc 'access-rights)(:rid 'u32)(:attr 'u8)(:domainid 'u8)
+(dm-define-object 'role (:acc 'access-rights)(:rid 'u32)
                   (:channels 'u16 512)(:name 'cstr 64))
 (dm-set-object-store-backend 'role (:be (object 'psqlbe psqlbe-ops))(:key "mapserverdb"))
-(dm-set-object-cache 'role 2048kb)
+(dm-set-object-cache 'role 128kb)
 
 ;; ok, misc stuff is done
 ;; now about maps
