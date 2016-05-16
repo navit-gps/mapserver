@@ -85,6 +85,30 @@ typedef struct __group2_type {
   uint64_t spec;
 }__attribute__((packed)) group_t;
 
+typedef struct __role2_type {
+  acc_right_t acc;
+  uint32_t rid;
+  uint16_t channels[512];
+  char name[64];
+}__attribute__((packed)) role_t;
 
+/* map catalogs */
+typedef struct __mapdirectory2_type { /* this is used as a root description of the catalog */
+  acc_right_t acc;
+  uint32_t mdid;
+  char name[512];
+}__attribute__((packed)) mapdirectory_t;
+
+typedef struct __mapregion2_type {
+  acc_right_t acc;
+  uint32_t mdid; /* catalog of the region */
+  char name[512];
+  uint64_t regid; /* region id */
+  uint64_t root_regid; /* parent if exists */
+  char navitmap[128]; /* a name of converted navit map on storage */
+  uint32_t generation; /* the generation serial number */
+  uint64_t rsize; /* size in bytes */
+  uint64_t source; /* unique ID of the source */
+}__attribute__((packed)) mapregion_t;
 
 #endif /* __MAPSERVER_COREDATA_H__ */
