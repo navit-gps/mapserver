@@ -35,6 +35,8 @@
 
 #define MOD_PREFIX  sxmpd
 
+static yd_context_t *actx = NULL;
+
 static long __cmp_cstr(const void *a, const void *b);
 static int __chack_get_stream(void *, sexp_t *);
 static int __chack_get_stream_list(void *, sexp_t *);
@@ -609,7 +611,7 @@ static void *__sxmpd_listen(void *arg)
                                                                               connection,
                                                                               that's all */
     if(!co) {
-      fprintf(stderr, "Cannot accept link (%d)\n", errno);
+      ydlog(actx, YL_WARN, "Cannot accept link (%d)\n", errno);
     }
   }
 
@@ -801,6 +803,7 @@ static int __instance_run(struct sxmpd_node *nn)
 }
 
 def_init(sxmpd) {
+  actx = ctx;
   OpenSSL_add_all_digests();
 
   return 0;
