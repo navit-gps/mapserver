@@ -27,7 +27,7 @@
 
 ;; Configure modules
 ;; modules symbol prefixes and path
-(module-set 'master (:prefix "sxmpd")(:pathname global/sxmpdsoname))
+(module-set 'network (:prefix "sxmpd")(:pathname global/sxmpdsoname))
 (module-set 'datamux (:prefix "datamux")(:pathname global/datamuxsoname))
 (module-set 'psqlbe (:prefix "psqlbe")(:pathname global/pgsqlbesoname))
 
