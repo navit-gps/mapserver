@@ -75,4 +75,5 @@ modules/Makefile
 modules/modsxmp/Makefile
 modules/moddatamux/Makefile
 modules/modpsqlbe/Makefile
+modules/modsession/Makefile
 ])
