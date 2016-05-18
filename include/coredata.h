@@ -111,4 +111,17 @@ typedef struct __mapregion2_type {
   uint64_t source; /* unique ID of the source */
 }__attribute__((packed)) mapregion_t;
 
+/* session type used to store the more data about session to
+ * the mapserver
+ */
+typedef struct __mapserver_session_type {
+  pem_t certificate;
+  dataacc_pemctx_t access;
+  uint64_t timeleft;
+  uint64_t uoid;
+  usrtc_t *availdta;
+  void *ds;
+  sxlink_t *co;
+} svsession_t;
+
 #endif /* __MAPSERVER_COREDATA_H__ */
