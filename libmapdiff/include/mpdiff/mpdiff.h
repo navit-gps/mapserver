@@ -42,7 +42,7 @@ struct nmit_ops {
   size_t (*writeh)(navit_mapit_t *, size_t, off_t, void *);
 };
 
-int navit_mapit_cc(struct nmit_ops *, void *);
+navit_mapit_t *navit_mapit_cc(struct nmit_ops *, void *);
 int navit_mapit_free(navit_mapit_t *);
 
 size_t mpdiff_cmp(navit_mapit_t *m1, navit_mapit_t *m2, navit_mpdiff_t *p);
