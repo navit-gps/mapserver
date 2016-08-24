@@ -22,13 +22,15 @@
 #include <stdint.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdlib.h>
 #include <sys/types.h>
+#include <errno.h>
 
 #include <mpdiff/mpdiff.h>
 
 navit_mapit_t *navit_mapit_cc(struct nmit_ops *nm, void *opts)
 {
-  navit_mapit_cc *n = NULL;
+  navit_mapit_t *n = NULL;
   int r = 0;
 
   if(!nm) {
@@ -38,7 +40,7 @@ navit_mapit_t *navit_mapit_cc(struct nmit_ops *nm, void *opts)
 
   if(!(n = malloc(sizeof(navit_mapit_t)))) {
     errno = ENOMEM;
-    goto failfi;
+    goto __failfi;
   }
 
   /* init all the stuff */
