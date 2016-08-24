@@ -1,0 +1,14 @@
+Libmapdiff
+
+1. Purpose: this is a special C library to create a so called
+patches to apply to the binary map format used by navit.
+I hope it can be used in navit itself to apply patches for maps,
+since downloading updates as a full maps isn't secure (all signed,
+but big blobs everytime not so good) and faster to get a patch
+instead of big blobof the whole region.
+
+2. Functions: make a difference, apply a so-called patch to binary.
+
+3. Method: to make a proof-of-concept the first version will be
+quite stupid (based on so-called 'commits'), later i'm planning
+to get deeper with navit maps format and make it better.
