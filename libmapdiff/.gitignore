@@ -40,3 +40,4 @@ config.sub.dh-orig
 debian/libmapdiff*
 debian/files
 debian/tmp
+INSTALL
