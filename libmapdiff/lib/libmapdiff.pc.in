@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+datarootdir=@datarootdir@
+datadir=@datadir@
+includedir=@includedir@
+
+Name: libmapdiff
+Description: Special yet another binary diff library used for navit map format files.
+Version: @VERSION@
+Requires: 
+Libs: -L${libdir} -lmapdiff
+Cflags: -I${includedir}
