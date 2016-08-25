@@ -12,3 +12,27 @@ instead of big blobof the whole region.
 3. Method: to make a proof-of-concept the first version will be
 quite stupid (based on so-called 'commits'), later i'm planning
 to get deeper with navit maps format and make it better.
+
+3.1 Commits algo: Navit map format actually is a Zip files with a lot
+of files, some of those changes, others going to be deleted, etc ...
+A patch in this case might looks like the following:
+  1. Complete a list of deletions
+  2. Complete a list of insertions
+  3. Complete a list of diffences (i.e. if files are differs)
+  4. Write all lists to the patch
+  5. Create a binary diffs for each files differs
+  6. Write all diffs to the patch
+  7. Update patch header
+
+4. Am i idiot ?
+Not known to the public yet, but this is just a quick and dirty
+implementation. I need more time to inspect and investigate navit
+map format, for now just have few maps with different dates and
+usual tools: unzip, sed, awk, diff etc ...
+From my point of view - my proposal will works (in some cases) well,
+but patches for 1 year old map huge. To optimize it library must
+know about index format and mostly about everything to make an optimal
+patch (patch will became some kind of instructions also (guess like
+rename this file, take this piece from this one and move to the other,
+delete this file, apply a changes to this file, etc...)) - it makes
+a mapdiff quite complicated.
